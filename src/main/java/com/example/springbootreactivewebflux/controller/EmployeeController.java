@@ -37,6 +37,7 @@ public class EmployeeController {
     }
 
     @DeleteMapping("{id}")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public Mono<Void> deleteEmp(@PathVariable("id") String id){
         return employeeService.deleteEmployee(id);
     }
